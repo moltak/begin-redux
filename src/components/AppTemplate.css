@@ -3,7 +3,8 @@
   display: flex;
 }
 
-.counter, .todos {
+.counter,
+.todos {
   flex: 1;
   padding: 1rem;
 }

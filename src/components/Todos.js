@@ -2,21 +2,21 @@ import React from 'react';
 import { List, Map } from 'immutable';
 
 const TodoItem = ({ id, text, checked, onToggle, onRemove }) => (
-  <li 
+  <li
     style={{
       textDecoration: checked ? 'line-through' : 'none'
-    }} 
+    }}
     onClick={() => onToggle(id)}
     onDoubleClick={() => onRemove(id)}>
     {text}
   </li>
 )
 
-const Todos = ({todos, input, onInsert, onToggle, onRemove, onChange }) => {
-  
+const Todos = ({ todos, input, onInsert, onToggle, onRemove, onChange }) => {
+
   const todoItems = todos.map(
     todo => {
-      const { id, checked, text } = todo.toJS();
+      const { id, checked, text } = todo
       return (
         <TodoItem
           id={id}
@@ -32,10 +32,10 @@ const Todos = ({todos, input, onInsert, onToggle, onRemove, onChange }) => {
   return (
     <div>
       <h2>오늘 할 일</h2>
-      <input value={input} onChange={onChange}/>
+      <input value={input} onChange={onChange} />
       <button onClick={onInsert}>추가</button>
       <ul>
-        { todoItems }
+        {todoItems}
       </ul>
     </div>
   );
